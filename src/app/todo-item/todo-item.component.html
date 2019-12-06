@@ -1,0 +1,4 @@
+<div class="content">
+    <input type="checkbox" [checked]="task.done" (click)="onClick()">
+    <span [ngClass]="{'doneTask': task.done}">{{task.task}}</span>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>TODO for today: {{getNumberOfTodos()}}</h1>
+
+    <div *ngIf="list.length == 0">Nothing to do...</div>
+
+    <app-todo-item *ngFor="let item of list"
+            [task]="item"
+            (taskUpdated)="onTaskUpdated($event)">
+    </app-todo-item>   
+
+    <span class="flexone"></span>
+    <div class="add">
+        <input #addInput type="text" value="{{defaultTask}}">
+        <button (click)="add(addInput.value)">Add</button>
+    </div>
+</div>
